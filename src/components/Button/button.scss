@@ -1,0 +1,33 @@
+@import '../layout/layout.scss';
+
+@mixin leaf-button  {
+    border-top-left-radius: 20%;
+border-bottom-right-radius: 20%; 
+    
+}@mixin button($color, $hover-color){
+    background-color: $color;
+    color:white;
+    border:none;
+    transform: translateY(1px);
+        transition-duration: 0.4s;
+    padding:10px;
+
+
+    &:hover,&:focus{
+        background-color: $hover-color;
+        transform: translateY(-1px);
+        transition-duration: 0.4s;
+        outline: none;
+        
+    }
+    &:active{
+        filter: opacity(0.3);
+    }
+}
+.button-main{
+    @include button($blue,$blue-dark);
+    @include leaf-button;
+}
+.button-rectangle-purple{
+    @include button($purple, $purple-dark);
+}

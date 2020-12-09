@@ -1,18 +1,12 @@
 module.exports = {
   plugins: [
-    {
-      resolve: "gatsby-source-wordpress-experimental",
-      options: {
-        url: "",
-      },
-    },
     "gatsby-plugin-sass",
-    {
+  /*  {
       resolve: "gatsby-plugin-google-analytics",
       options: {
         trackingId: "",
       },
-    },
+    },*/
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
