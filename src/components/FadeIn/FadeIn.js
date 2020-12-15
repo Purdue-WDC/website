@@ -1,7 +1,7 @@
 import React from 'react'
-import './textFadeIn.scss';
+import './fadeIn.scss';
 
-export default function TextFadeIn(props) {
+export default function FadeIn(props) {
 
     return (
         <div class="fade-in">
