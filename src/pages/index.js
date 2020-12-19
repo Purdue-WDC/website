@@ -6,12 +6,22 @@ import FadeIn from "../components/FadeIn/FadeIn"
 const IndexPage = () => {
   
   return (
-
     <Layout>
-      <FadeIn><p>hello</p></FadeIn>
-      <FadeIn><Button class="button-main" text="button" to="https://www.victoirebeaufils.me"></Button> </FadeIn>
-    <Button class="button-rectangle-purple" text="button" to="https://www.victoirebeaufils.me"></Button>
-     </Layout>
+    <div>
+    <h1>Text</h1>
+    <p> Font: </p>
+    <p> p, _ px</p>
+    <h6>h6, _ px</h6>
+    <h5>h5, _ px</h5>
+    <h4>h4, _ px</h4>
+    <h3>h3, _ px</h3>
+    <h2>h2, _ px</h2>
+    <h1>h1, _ px</h1>
+
+    <h1>Buttons</h1>
+    
+    </div>
+    </Layout>
   )
 }
 

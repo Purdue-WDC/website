@@ -1,20 +1,30 @@
 @import '../layout/layout.scss';
 
 @mixin leaf-button  {
-    border-top-left-radius: 20%;
-border-bottom-right-radius: 20%; 
+    border-top-left-radius: 18px;
+border-bottom-right-radius: 20px; 
     
-}@mixin button($color, $hover-color){
+}@mixin button($hasColor, $hasHoverColor, $color, $hoverColor){
+    @if($hasColor) {
     background-color: $color;
+    }
+    @else {
+        background-color: $blue;
+    }
     color:white;
     border:none;
     transform: translateY(1px);
         transition-duration: 0.4s;
-    padding:10px;
+    padding:15px;
 
 
-    &:hover,&:focus{
-        background-color: $hover-color;
+    &:hover,&:focus{ 
+        @if($hasHoverColor) {
+        background-color: $hoverColor;
+        }
+        @else {
+            background-color: $blue-dark;
+        }
         transform: translateY(-1px);
         transition-duration: 0.4s;
         outline: none;
@@ -24,10 +34,31 @@ border-bottom-right-radius: 20%;
         filter: opacity(0.3);
     }
 }
-.button-main{
-    @include button($blue,$blue-dark);
+@mixin button-hover-transparent($hasColor, $hasHoverColor, $color, $hoverColor){
+    @include button($hasColor, $hasHoverColor, $color, $hoverColor);
+    &:hover, &:focus {
+        @if($hasHoverColor) {
+        border-color: 4px solid $hoverColor;
+        
+        background-color: transparent;
+        background-clip: padding-box; //https://stackoverflow.com/questions/28603713/transparent-border-with-background-color
+
+        color: $hoverColor;
+        }
+        @else {
+            
+        }
+      
+    }
+    
+}
+.button-hover-transparent-blue {
+    @include button-hover-transparent(true, true ,$blue , $blue-dark);
+}
+.button-default{
+    @include button(false, false, null, null);
     @include leaf-button;
 }
 .button-rectangle-purple{
-    @include button($purple, $purple-dark);
+    @include button(true, true, $purple, $purple-dark);
 }
