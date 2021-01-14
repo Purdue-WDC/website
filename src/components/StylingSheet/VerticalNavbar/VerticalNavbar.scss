@@ -1,0 +1,11 @@
+.vn-container {
+    display: flex; /* or inline-flex */
+    flex-direction: column;
+    //margin: 0 15px;
+    background-color:  #3E2FB5;
+    padding: 10px;
+  }
+ .vn-container > * {
+    margin: 5px 0;
+   
+}

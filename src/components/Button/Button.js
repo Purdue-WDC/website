@@ -1,5 +1,5 @@
 import React from 'react';
-import './button.scss';
+import './button.sass';
 import Link from 'gatsby';
 export default function Button(props) {
     console.log(props.to)
@@ -16,7 +16,7 @@ export default function Button(props) {
     console.log(link)
     return(
         
-        <button class={props.class}>{props.to}</button>
+        <button class={props.class?props.class:"button-default"} style={props.style} onClick={props.onClick}>{props.text}</button>
     )
 
 }

@@ -12,6 +12,19 @@ border-bottom-right-radius: 20px;
         background-color: $blue;
     }
     color:white;
+    @if($hasColor){
+    $red: red($color);
+    $blue: blue($color);
+    $green: green($color);
+    
+    @if(($red*0.299 + $green*0.587 + $blue*0.114) > 186) {
+        color: #000000;
+    }
+    @else{
+        color: #ffffff;
+    }
+}
+   
     border:none;
     transform: translateY(1px);
         transition-duration: 0.4s;
@@ -21,6 +34,18 @@ border-bottom-right-radius: 20px;
     &:hover,&:focus{ 
         @if($hasHoverColor) {
         background-color: $hoverColor;
+        $red: red($hoverColor);
+        $blue: blue($hoverColor);
+        $green: green($hoverColor);
+        
+        @if(($red*0.299 + $green*0.587 + $blue*0.114) > 186) {
+            @debug "hovercolor is light";
+            color: #000000;
+        }
+        @else{
+            color: #ffffff;
+            @debug "hovercolor is dark";
+        }
         }
         @else {
             background-color: $blue-dark;
@@ -61,4 +86,27 @@ border-bottom-right-radius: 20px;
 }
 .button-rectangle-purple{
     @include button(true, true, $purple, $purple-dark);
+}
+.button-rectangle-rounded-corners-blue{
+    @include button(true, true, $blue, $blue-dark );
+    border-radius: 15px;
+    color:white;
+    //color:#A1AAC6;
+}
+.button-rectangle-rounded-corners{
+    @include button(true, true, white, white );
+    border-radius: 15px;
+    color:#A1AAC6;
+
+}
+.button-rectangle-rounded-corners:hover{
+    color: #71778a;
+    background-color: white;
+}
+.button{
+    border: none;
+    padding: 10px;
+    background-color: transparent;
+    color:  #8A9CFE;
+
 }
