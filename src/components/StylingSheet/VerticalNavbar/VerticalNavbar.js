@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 import Button from '../../button/Button';
+
 import "./VerticalNavbar.scss"
 export default function VerticalNavbar(props) {
-
+    const [active, setActive] = useState(false);
+    
     return (
             <div class="vn-container">
             <Button  text="Layout" style={{paddingLeft: "90px", paddingRight: "90px"}}></Button>
