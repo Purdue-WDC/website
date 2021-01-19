@@ -7,7 +7,6 @@ const IndexPage = () => {
   
   return (
     <Layout>
-      <Navbar></Navbar>
       <Link to="/StylingSheet/StylingSheet">Styling Sheet</Link>
     </Layout>
   )
